@@ -14,6 +14,7 @@ void helloWorld() {
     std::cout << "P3\n" << imageWidth << ' ' << imageHeight << "\n255\n";
 
     for (int j = 0; j < imageHeight; j++) {
+        std::clog << "\rScanlines remaining: " << (imageHeight - j) << ' ' << std::flush;
         for (int i = 0; i < imageWidth; i++) {
             auto r = double(i) / (imageWidth - 1);
             auto g = double(j) / (imageHeight - 1);
@@ -26,4 +27,6 @@ void helloWorld() {
             std::cout << ir << ' ' << ig << ' ' << ib << '\n';
         }
     }
+
+    std::clog << "\rDONE!                      \n";
 }
